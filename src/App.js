@@ -50,11 +50,11 @@ function App() {
       <Alert alert={alert} />
       <Switch>
         <Route exact path="/about">
-          <About />
+          <About mode={mode} />
         </Route>
         <Route exact path="/">
           <TextForm
-            heading="Enter Text to Analyse"
+            heading="Try TextUtils - Word Counter, Character Counter,Remove Extra Spaces"
             onSummaryUpdate={SummaryUpdate}
             mode={mode}
             showAlert={showAlert}

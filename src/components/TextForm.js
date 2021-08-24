@@ -43,16 +43,16 @@ function TextForm(props) {
     props.onSummaryUpdate(text);
    
   return (
-    <div className="container my-3" style={{color:props.mode==='light'?'black':'white'}}>
-        <h1>{props.heading}</h1>
+    <div className="container my-3 " style={{color:props.mode==='light'?'black':'white'}}>
+        <h1 className="mb-2">{props.heading}</h1>
       <div className="mb-3" >
         <textarea id="myBox" className="form-control" value={text} onChange={onChangeText} rows="8" style={{color:props.mode==='light'?'black':'white',backgroundColor:props.mode==='light'?'white':'black'}}></textarea>
       </div>
-      <button className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={convToUpr}>Convert To UpperCase</button>
-      <button className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={convToLow}>Convert To LowerCase</button>
-      <button className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={clear}>Clear</button>
-      <button className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={copyText}>Copy Text</button>
-      <button className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={removeExtraSpace}>Remove Extra Spaces</button>
+      <button disabled={text.length===0} className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={convToUpr}>Convert To UpperCase</button>
+      <button disabled={text.length===0} className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={convToLow}>Convert To LowerCase</button>
+      <button disabled={text.length===0} className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={clear}>Clear</button>
+      <button disabled={text.length===0} className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={copyText}>Copy Text</button>
+      <button disabled={text.length===0} className={`btn btn-outline-${props.mode==='light'?'primary':'light'} mx-2 my-2`} onClick={removeExtraSpace}>Remove Extra Spaces</button>
     </div>
   );
 }
